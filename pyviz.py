@@ -1,25 +1,31 @@
 import graphviz
 
-digraph finite_state_machine {
-	rankdir=LR;
-	size="8,5"
-	node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
-	node [shape = circle];
-	LR_0 -> LR_2 [ label = "SS(B)" ];
-	LR_0 -> LR_1 [ label = "SS(S)" ];
-	LR_1 -> LR_3 [ label = "S($end)" ];
-	LR_2 -> LR_6 [ label = "SS(b)" ];
-	LR_2 -> LR_5 [ label = "SS(a)" ];
-	LR_2 -> LR_4 [ label = "S(A)" ];
-	LR_5 -> LR_7 [ label = "S(b)" ];
-	LR_5 -> LR_5 [ label = "S(a)" ];
-	LR_6 -> LR_6 [ label = "S(b)" ];
-	LR_6 -> LR_5 [ label = "S(a)" ];
-	LR_7 -> LR_8 [ label = "S(b)" ];
-	LR_7 -> LR_5 [ label = "S(a)" ];
-	LR_8 -> LR_6 [ label = "S(b)" ];
-	LR_8 -> LR_5 [ label = "S(a)" ];
-}
+f = graphviz.Digraph('test')
+f.attr(rankdir='LR', size='8,5')
 
-dot.format = 'svg'
-dot.render()
+f.attr('node', shape='doublecircle')
+f.node('LR_0')
+f.node('LR_3')
+f.node('LR_4')
+f.node('LR_8')
+
+f.attr('node', shape='circle')
+f.edge('LR_0', 'LR_2', label='SS(B)')
+f.edge('LR_0', 'LR_1', label='SS(S)')
+f.edge('LR_1', 'LR_3', label='S($end)')
+f.edge('LR_2', 'LR_6', label='SS(b)')
+f.edge('LR_2', 'LR_5', label='SS(a)')
+f.edge('LR_2', 'LR_4', label='S(A)')
+f.edge('LR_5', 'LR_7', label='S(b)')
+f.edge('LR_5', 'LR_5', label='S(a)')
+f.edge('LR_6', 'LR_6', label='S(b)')
+f.edge('LR_6', 'LR_5', label='S(a)')
+f.edge('LR_7', 'LR_8', label='S(b)')
+f.edge('LR_7', 'LR_5', label='S(a)')
+f.edge('LR_8', 'LR_6', label='S(b)')
+f.edge('LR_8', 'LR_5', label='S(a)')
+
+f.format = 'svg'
+f.view()
+#f.render()
+
