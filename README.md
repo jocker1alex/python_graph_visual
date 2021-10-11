@@ -4,13 +4,14 @@ Vsualization of the dataset as a graph, tree or network
 https://pypi.org/project/graphviz/
 
 # Install graphviz
-<b>Ubuntu:<b><br>
+Ubuntu:<br>
 sudo apt-get update<br>
 sudo apt-get install python-pip<br>
 sudo pip install graphviz<br>
 
-<b>Windows<b><br>
+Windows<br>
 Download and install https://www.graphviz.org/download/<br>
 
-
-https://marketplace.visualstudio.com/items?itemName=tintinweb.graphviz-interactive-preview
+User Guide: https://graphviz.readthedocs.io/en/stable/manual.html<br>
+Examples: https://graphviz.readthedocs.io/en/stable/examples.html<br>
+Aditional: https://marketplace.visualstudio.com/items?itemName=tintinweb.graphviz-interactive-preview<br>
